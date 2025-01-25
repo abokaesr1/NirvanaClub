@@ -1,0 +1,439 @@
+:root {
+    --main-color: #002058;
+    --secondary-color: #0b2c64;
+    --white-color: #fff;
+    --main-gradient: linear-gradient(
+        90deg,
+        rgba(0, 32, 88, 1) 33%,
+        rgba(35, 77, 149, 1) 100%
+    );
+    --top-gradient: linear-gradient(
+        0deg,
+        rgba(0, 32, 88, 1) 0%,
+        rgba(69, 114, 193, 1) 100%
+    );
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+.map-container {
+    height: 100vh;
+}
+
+h5 {
+    color: white;
+}
+p {
+    color: rgba(0, 0, 0, 0.5);
+}
+.hero-content div strong {
+    color: white !important;
+}
+.hero-content div {
+    font-weight: 300 !important;
+}
+strong,
+h4 {
+    color: #183161d1;
+}
+.aboutus-logo {
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+}
+.header {
+    background-image: url("imeges/al-mafraq-hospital-001.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.header ul li {
+    margin-right: 15px;
+}
+
+.header ul li a {
+    color: white !important;
+}
+
+.header li.active a {
+    color: #183161d1 !important;
+    font-weight: 700;
+}
+
+.header ul li a:hover {
+    color: #183161d1 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+button {
+    background-color: transparent !important;
+    border: 1px solid white;
+    color: white;
+}
+
+button:hover {
+    transition: border 0.1s ease-in;
+}
+
+.header .ahmad:hover {
+    border: 2px solid white;
+    background-color: red;
+}
+
+.header img {
+    margin-right: 40px;
+}
+
+.header i {
+    color: white;
+    border: none !important;
+}
+
+.header .icons i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white !important;
+    height: 45px;
+    width: 45px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.header .icons i:hover {
+    background-color: white;
+    color: #183161d1 !important;
+    transition: all 0.9s ease-in-out;
+}
+
+.header-last {
+    bottom: 0;
+    width: 100%;
+}
+
+.header-last p {
+    color: #eee;
+}
+
+.Our-Commitment .box:hover {
+    background-color: #64a6d0 !important;
+    color: white !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.work p {
+    color: #889;
+}
+
+.work h5,
+.work h1 {
+    color: #303e75;
+}
+
+.work .fff1,
+.work .fff2,
+.work .fff3 {
+    opacity: 0.5;
+}
+
+.work .fff1:hover,
+.work .fff2:hover,
+.work .fff3:hover {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    border: 1px solid white !important;
+    border-radius: 100px !important;
+    padding: 10px !important;
+}
+
+.carusal-caption {
+    top: 15%;
+    left: 10%;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-control-next span:focus,
+.carousel-control-next span:hover,
+.carousel-control-prev span:focus,
+.carousel-control-prev span:hover {
+    background-color: #555 !important;
+}
+
+.carousel-inner button:hover {
+    padding-left: 15px !important;
+    padding-right: 15px;
+    transition: border 0.1s ease-in-out;
+}
+
+.myslider ul li {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #888;
+    cursor: pointer;
+}
+
+.myslider ul li:hover {
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.myslider ul li.active {
+    color: white;
+}
+
+.owl-theme .owl-dots {
+    text-align: start !important;
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0;
+    display: none !important;
+}
+
+.join-club .custom-nav i {
+    border: 1px solid #183161d1;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    color: #183161d1;
+    background-color: transparent;
+}
+
+.join-club .custom-nav i:hover {
+    background-color: #183161d1;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.join-club .shear img {
+    opacity: 0.3;
+}
+
+.join-club .shear img:hover {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+
+.Our-Commitment .custom-nav i {
+    border: 1px solid white;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 7px;
+    border-radius: 50%;
+    color: white;
+    background-color: transparent;
+}
+
+.Our-Commitment .custom-nav i:hover {
+    background-color: white;
+    color: #183161d1 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.hide-div {
+    height: 80vh;
+}
+
+.hide-div .data i {
+    border: 1px solid #183161d1;
+    background-color: #183161d1;
+    border-radius: 50%;
+    padding: 4px;
+    color: white;
+}
+
+.hide-div .data {
+    height: 375px;
+    overflow: hidden;
+    position: relative;
+    padding: 5px 15px !important;
+}
+
+.hide-div .data:hover {
+    height: 450px;
+    transition: height 0.4s ease-in-out;
+    background-color: #183161d1 !important;
+}
+
+.hide-div .data:hover h2,
+.hide-div .data:hover h5,
+.hide-div .data:hover p {
+    color: white !important;
+}
+
+.hide-div .data:hover button {
+    background-color: white !important;
+    color: #303e75 !important;
+}
+
+.hide-div .data:hover i {
+    background-color: #64a6d0;
+    color: white;
+}
+
+.imege-fill .mystyle button:hover {
+    background-color: #183161d1 !important;
+    color: white !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact label {
+    margin-bottom: 5px;
+}
+
+.contact .input input {
+    border: none !important;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact textarea {
+    border: none !important;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact .eee i {
+    border: 1px solid white;
+    background-color: #64a6d0;
+    color: white;
+    padding: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.contact .eee i:hover {
+    background-color: white;
+    color: #64a6d0;
+    border: 1px solid #64a6d0;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact .rrr button {
+    background-color: #64a6d0 !important;
+    color: white !important;
+}
+
+.contact .rrr button:hover {
+    background-color: white !important;
+    color: #64a6d0 !important;
+    border: 1px solid #64a6d0 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.frecuantly .ddd i {
+    color: #64a6d0;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .header {
+        background-image: url(imeges/al-mafraq-hospital-001.jpg);
+        height: auto !important;
+        min-height: 350px !important;
+        /* إخفاء الخلفية */
+    }
+
+    .about-us h1 {
+        margin-bottom: 20px;
+    }
+
+    .about-us h4 {
+        text-align: center;
+    }
+
+    .Our-Commitment .box {
+        margin-bottom: 10px;
+    }
+
+    .work .imege {
+        margin-bottom: 15px;
+    }
+
+    .hide-div h1 {
+        text-align: center;
+        margin-bottom: 35px !important;
+    }
+
+    .hide-div .data {
+        margin-bottom: 25px !important;
+    }
+
+    .hide-div {
+        height: auto;
+    }
+
+    .join-club .shear img {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+    .hide-div h1 {
+        text-align: center;
+        margin-bottom: 35px !important;
+    }
+
+    .hide-div .data {
+        margin-bottom: 25px !important;
+    }
+
+    .hide-div {
+        height: auto !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .Our-Commitment .box {
+        margin-bottom: 10px;
+    }
+
+    .carousel-control-next {
+        margin-left: 5%;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        top: 80%;
+        bottom: 0px;
+        left: 60px;
+        color: white !important;
+        opacity: 1;
+    }
+
+    .owl-theme .owl-nav.disabled + .owl-dots {
+        margin-top: 11px !important;
+    }
+}
+
+.icon-ourcommitment {
+    width: 75px;
+    margin-bottom: 20px;
+}
+.card-howitworks {
+    backdrop-filter: blur(20px);
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 30px 10px;
+    margin-bottom: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
