@@ -50,18 +50,18 @@ class Ourcommitment extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('English Title','en_title'),
-            Text::make('Arabic Title','ar_title'),
-            Trix::make('English Description','en_description'),
-            Trix::make('Arabic Description','ar_description'),
-            Flexible::make("Our Commitment Cards",'cards')
-            ->addLayout("Our Commitment Cards",'cards',[
-                Text::make('English Name','en_name'),
-                Text::make('Arabic Name','ar_name'),
-                Trix::make('English Description','en_description'),
-                Trix::make('Arabic Description','ar_description'),
-                Imagic::make('Icon','Icon'),
-            ])
+            Text::make('English Title', 'en_title'),
+            Text::make('Arabic Title', 'ar_title'),
+            Trix::make('English Description', 'en_description'),
+            Trix::make('Arabic Description', 'ar_description'),
+            Flexible::make("Our Commitment Cards", 'cards')
+                ->addLayout("Our Commitment Cards", 'cards', [
+                    Text::make('English Name', 'en_name'),
+                    Text::make('Arabic Name', 'ar_name'),
+                    Trix::make('English Description', 'en_description'),
+                    Trix::make('Arabic Description', 'ar_description'),
+                    Imagic::make('Icon', 'Icon'),
+                ])
         ];
     }
 

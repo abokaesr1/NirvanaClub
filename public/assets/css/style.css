@@ -16,7 +16,8 @@
 
 body {
     box-sizing: border-box;
-    font-family: "Montserrat";
+    font-family: "Cairo";
+    font-weight: 300 !important;
 }
 
 .map-container {
@@ -262,15 +263,19 @@ button:hover {
 }
 
 .hide-div .data:hover {
-    height: 450px;
+    height: auto;
     transition: height 0.4s ease-in-out;
     background-color: #183161d1 !important;
 }
 
 .hide-div .data:hover h2,
 .hide-div .data:hover h5,
-.hide-div .data:hover p {
+.hide-div .data:hover li,
+.hide-div .data:hover small {
     color: white !important;
+}
+.hide-div .data:hover li {
+    font-size: 13px;
 }
 
 .hide-div .data:hover button {

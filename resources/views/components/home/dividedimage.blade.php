@@ -1,7 +1,7 @@
 <div class="imege-fill position-relative"
-    style=" height: 100vh; background-image: url(imeges/al-mafraq-hospital-001.jpg); background-size: cover; background-repeat: no-repeat;">
+    style=" height: 100vh; background-image: url(assets/images/divider.png); background-size: contain; background-repeat: no-repeat;background-position:right">
     <div class="container ">
-        <div class="mystyle px-5 position-absolute" style="top: 30%; left: 10%; color: white;">
+        <div class="mystyle px-5 position-absolute" style="top: 30%; left: 10%; color: black;">
             <h1 style="white-space: pre-line;">Established in 2019, Sheikh Shakhbout
                 Medical City (SSMC) has made its
                 footprint in the nation and region

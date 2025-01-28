@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('ar_title');
             $table->string('en_subtitle');
             $table->string('ar_subtitle');
+            $table->string('price');
             $table->longText('pricing')->nullable();
             $table->timestamps();
         });

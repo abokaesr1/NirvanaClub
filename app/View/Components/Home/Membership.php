@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Home;
 
+use App\Models\Membership as ModelsMembership;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class Membership extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.home.membership');
+        $membership = ModelsMembership::get();
+        return view('components.home.membership', compact('membership'));
     }
 }
