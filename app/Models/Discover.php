@@ -9,4 +9,7 @@ class Discover extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'tabs' => 'array',
+    ];
 }

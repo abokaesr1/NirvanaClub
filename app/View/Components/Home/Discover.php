@@ -23,8 +23,9 @@ class Discover extends Component
      */
     public function render(): View|Closure|string
     {
-        $discover = ModelsDiscover::first();
+        $discover = ModelsDiscover::get();
         $readytojoin = Readytojoin::first();
-        return view('components.home.discover',compact('discover', 'readytojoin'));
+        //dd($discover);
+        return view('components.home.discover', compact('discover', 'readytojoin'));
     }
 }

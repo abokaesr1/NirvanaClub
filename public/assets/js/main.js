@@ -1,11 +1,9 @@
  //<!-- toggle active -->
  $(document).ready(function () {
-     // عند النقر على عنصر li
-     $('li').click(function () {
-         // إزالة الكلاس من جميع عناصر li
-         $('li').removeClass('active');
 
-         // إضافة الكلاس إلى العنصر الذي تم النقر عليه
+     $('li').click(function () {
+
+         $('li').removeClass('active');
          $(this).addClass('active');
      });
  });
@@ -21,10 +19,10 @@
      var icon = document.getElementById("myIcon");
      if (icon.classList.contains("fa-bars")) {
          icon.classList.remove("fa-bars");
-         icon.classList.add("fa-xmark"); // تغيير إلى الأيقونة الثانية // يمكنك تغيير النص أو الرمز هنا
+         icon.classList.add("fa-xmark");
      } else {
          icon.classList.remove("fa-xmark");
-         icon.classList.add("fa-bars"); // العودة إلى الأيقونة الأولى
+         icon.classList.add("fa-bars");
      }
  });
 
@@ -69,7 +67,7 @@
          loop: true,
          margin: 0,
          nav: false,
-         dots: false, // إخفاء الأسهم الافتراضية
+         dots: false,
          items: 1
      });
 
@@ -84,16 +82,13 @@
      $("#aaa").click(function () {
          carousel.trigger('next.owl.carousel');
      });
-     const map = L.map('map').setView([25.276987, 55.296249], 10); // الموقع الافتراضي (دبي)
-
-     // إضافة طبقة خريطة من OpenStreetMap
+     const map = L.map('map').setView([25.276987, 55.296249], 10);
      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         maxZoom: 19, // الحد الأقصى للتكبير
+         maxZoom: 19,
          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
      }).addTo(map);
 
-     // إضافة مؤشر (Marker) على الموقع المحدد
      L.marker([25.276987, 55.296249]).addTo(map)
-         .bindPopup('مرحبًا بك! هذا هو الموقع.')
+         .bindPopup('Hello This is your First Location')
          .openPopup();
  });

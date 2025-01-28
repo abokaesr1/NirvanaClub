@@ -2,9 +2,13 @@
 
 namespace App\Nova;
 
+use Ayvazyan10\Imagic\Imagic;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class Whytojoin extends Resource
 {
@@ -14,7 +18,11 @@ class Whytojoin extends Resource
      * @var class-string<\App\Models\Whytojoin>
      */
     public static $model = \App\Models\Whytojoin::class;
-
+    public static $group = "HOME";
+    public static function label()
+    {
+        return "Why Join The Club";
+    }
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
@@ -41,6 +49,14 @@ class Whytojoin extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('English Title', 'en_title'),
+            Text::make('Arabic Title', 'ar_title'),
+            Trix::make('English Description', 'en_description'),
+            Trix::make('Arabic Description', 'ar_description'),
+            Flexible::make("Slider Images", 'slider')
+                ->addLayout("Slider Images", 'slider', [
+                    Imagic::make('Slider', 'slider'),
+                ])
         ];
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Home;
 
+use App\Models\Whytojoin;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class Jointheclub extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.home.jointheclub');
+        $whyjoin = Whytojoin::first();
+        return view('components.home.jointheclub', compact('whyjoin'));
     }
 }

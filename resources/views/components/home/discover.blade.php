@@ -1,4 +1,5 @@
-<div class="row g-0 d-flex align-items-stretch" x-data="{ visibleDiv: 'div1' }">
+
+<div class="row g-0 d-flex align-items-stretch" x-data="{ visibleDiv: '{{ $discover[0]['en_subtitle'] }}' }">
     <div class="col-lg-6">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -32,120 +33,54 @@
         </div>
     </div>
     <div class="col-lg-6">
-        <div class="myslider p-5" style="background-color: #303e75;">
+        <div class="myslider p-5" style="background-color: #303e75;height:100%">
             <div class="row">
                 <div class="col-12">
                     <h4 class="text-uppercase mb-4" style="color: white; font-weight: 700;">discover</h4>
                     <ul class="list-unstyled text-uppercase d-flex">
-                        <li class="active" @click="visibleDiv = 'div1'">experences</li>
-                        <li @click="visibleDiv = 'div2'">boats</li>
-                        <li @click="visibleDiv = 'div3'">staff</li>
+                        @foreach ($discover as $key => $item)
+                            <li class="{{ $key == 0 ? 'active' : '' }}" @click="visibleDiv = '{{ $item->en_subtitle }}'">{{ $item->en_title }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <div class=" col-12" x-show="visibleDiv === 'div1'">
-                <div id="carusel1" class=" owl-carousel owl-theme mt-4">
-                    <div class="item">
-                        <img src="imeges/ssmc.jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/ssmc.jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/ssmc.jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/ssmc.jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/ssmc.jpg" alt="" style="height: 250px;">
-                    </div>
-                </div>
-                <div class="my-button text-end">
-                    <button type="button" class="ahmad rounded-pill px-3">See More</button>
-                </div>
-            </div>
-            <div class=" col-12" x-show="visibleDiv === 'div2'">
-                <div id="carusel2" class="owl-carousel owl-theme mt-4">
-                    <div class="item bg-white d-flex rounded-4">
-                        <div class="img-container rounded-4" style="flex: 1.4;">
-                            <img src="imeges/ssmc.jpg" alt="Image 1" class="img-fluid rounded-4"
+            @foreach ($discover as $key => $item)
+            <div class="col-12" x-show="visibleDiv === '{{ $item->en_subtitle }}' ">
+                    <div id="carusel{{ $key + 1 }}" class="owl-carousel owl-theme mt-4">
+                        @foreach ($item->tabs as $tab)
+                            @if($key + 1 !== 2)
+                            <div class="item">
+                                <img
+                                src="{{ asset($tab['attributes']['slider_image']) }}"
+                                alt="{{ $item->en_title }}"
                                 style="height: 250px;">
-                        </div>
-                        <div class=" text-container p-3" style="flex: 1;">
-                            <h4 style="color: #64a6d0; font-weight: 700;">SPX 214</h4>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <div class="link rounded-4 text-center"
-                                style="background-color: #64a6d0; color: white; border: 1px solid #64a6d0; ">
-                                <a style="text-decoration: none; color: white;" href="#">BOOK NOW!</a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="item bg-white d-flex rounded-4">
-                        <div class="img-container rounded-4" style="flex: 1.4;">
-                            <img src="imeges/images (1).jpg" alt="Image 1" class="img-fluid rounded-4"
-                                style="height: 250px;">
-                        </div>
-                        <div class=" text-container p-3" style="flex: 1;">
-                            <h4 style="color: #64a6d0; font-weight: 700;">SPX 214</h4>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <div class="link rounded-4 text-center"
-                                style="background-color: #64a6d0; color: white; border: 1px solid #64a6d0; ">
-                                <a style="text-decoration: none; color: white;" href="#">BOOK NOW!</a>
+                            @else
+                            <div class="item bg-white d-flex rounded-1">
+                                <div class="img-container rounded-1" style="flex: 1;">
+                                    <img
+                                    src="{{ asset($tab['attributes']['slider_image']) }}"
+                                    alt="Image 1"
+                                    class="img-fluid rounded-1"
+                                    style="height: 250px;object-fit:cover">
+                                </div>
+                                <div class=" text-container p-3" style="flex: 1;">
+                                    <h4 style="color: #64a6d0; font-weight: 700;">
+                                        {{ $tab['attributes']['en_title'] }}
+                                    </h4>
+                                    <div class="content">
+                                        {!! $tab['attributes']['en_description'] !!}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            @endif
+                        @endforeach
                     </div>
-                    <div class="item bg-white d-flex rounded-4">
-                        <div class="img-container rounded-4" style="flex: 1.4;">
-                            <img src="imeges/images (2).jpg" alt="Image 1" class="img-fluid rounded-4"
-                                style="height: 250px;">
-                        </div>
-                        <div class=" text-container p-3" style="flex: 1;">
-                            <h4 style="color: #64a6d0; font-weight: 700;">SPX 214</h4>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <h5 style="color: #444;">LENGTH</h5>
-                            <p style="color: #666; margin-top: 0px;">21 ft 8(32+t)</p>
-                            <div class="link rounded-4 text-center"
-                                style="background-color: #64a6d0; color: white; border: 1px solid #64a6d0; ">
-                                <a style="text-decoration: none; color: white;" href="#">BOOK NOW!</a>
-                            </div>
-                        </div>
+                    <div class="my-button text-end mt-4">
+                        <button type="button" class="ahmad rounded-pill px-3">See More</button>
                     </div>
-                </div>
-                <div class="my-button text-end">
-                    <button type="button" class="ahmad rounded-pill px-3">See More</button>
-                </div>
             </div>
-            <div class="col-12" x-show="visibleDiv === 'div3'">
-                <div id="carusel3" class=" owl-carousel owl-theme mt-4">
-                    <div class="item">
-                        <img src="imeges/images (1).jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/images (1).jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/images (1).jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/images (1).jpg" alt="" style="height: 250px;">
-                    </div>
-                    <div class="item">
-                        <img src="imeges/images (1).jpg" alt="" style="height: 250px;">
-                    </div>
-                </div>
-                <div class="my-button text-end">
-                    <button type="button" class="ahmad rounded-pill px-3">Join
-                        Now</button>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
