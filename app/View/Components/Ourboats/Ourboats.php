@@ -1,21 +1,21 @@
 <?php
 
-namespace App\View\Components\Home;
+namespace App\View\Components\Ourboats;
 
-use App\Models\Aboutus as ModelsAboutus;
-use App\Models\Ourcommitment;
+use App\Models\Discover;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Aboutus extends Component
+class Ourboats extends Component
 {
     /**
      * Create a new component instance.
      */
+    public  $discover;
     public function __construct()
     {
-        //
+        $this->discover = Discover::all();
     }
 
     /**
@@ -23,9 +23,7 @@ class Aboutus extends Component
      */
     public function render(): View|Closure|string
     {
-        $aboutus = ModelsAboutus::first();
-        $ourcommitment = Ourcommitment::first();
 
-        return view('components.home.aboutus', compact('aboutus', 'ourcommitment'));
+        return view('components.ourboats.ourboats');
     }
 }

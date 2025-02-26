@@ -14,43 +14,93 @@
     );
 }
 
+/* General CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     box-sizing: border-box;
-    font-family: "Cairo";
-    font-weight: 300 !important;
-}
-
-.map-container {
-    height: 100vh;
-}
-
-h5 {
-    color: white;
-}
-p {
-    color: rgba(0, 0, 0, 0.5);
-}
-.hero-content div strong {
-    color: white !important;
-}
-.hero-content div {
+    font-family: "Montserrat", "Helvetica Neue";
     font-weight: 300 !important;
 }
 strong,
 h4 {
     color: #183161d1;
 }
-.aboutus-logo {
+h5 {
+    color: white;
+}
+p {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: transparent !important;
+    border: 1px solid white;
+    color: white;
+}
+
+button:hover {
+    transition: border 0.1s ease-in;
+}
+
+.boutus-logo {
     width: 160px;
     height: 90px;
     object-fit: contain;
 }
-.header {
-    background-image: url("imeges/al-mafraq-hospital-001.jpg");
-    background-position: center;
-    background-size: cover;
+
+/* Hero Section style*/
+.main-hero-section {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
+.nav-hero-section {
+    z-index: 1;
+}
+
+.logo-white {
+    width: 150px;
+    height: auto;
+}
+
+.video-header-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.hero-content-section {
+    height: 60vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.content-section {
+    text-align: right;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 60px;
+}
+
+.map-container {
+    height: 100vh;
+}
+
+.hero-content div strong {
+    color: white !important;
+}
+.hero-content div {
+    font-weight: 300 !important;
+}
+
+/* Header Section */
 .header ul li {
     margin-right: 15px;
 }
@@ -67,16 +117,6 @@ h4 {
 .header ul li a:hover {
     color: #183161d1 !important;
     transition: all 0.3s ease-in-out;
-}
-
-button {
-    background-color: transparent !important;
-    border: 1px solid white;
-    color: white;
-}
-
-button:hover {
-    transition: border 0.1s ease-in;
 }
 
 .header .ahmad:hover {
@@ -122,12 +162,31 @@ button:hover {
     color: #eee;
 }
 
+/* Our-Commitment */
+
 .Our-Commitment .box:hover {
     background-color: #64a6d0 !important;
     color: white !important;
     transition: all 0.5s ease-in-out;
 }
 
+.Our-Commitment .custom-nav i {
+    border: 1px solid white;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 7px;
+    border-radius: 50%;
+    color: white;
+    background-color: transparent;
+}
+
+.Our-Commitment .custom-nav i:hover {
+    background-color: white;
+    color: #183161d1 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+/* work */
 .work p {
     color: #889;
 }
@@ -202,6 +261,8 @@ button:hover {
     display: none !important;
 }
 
+/* join-club */
+
 .join-club .custom-nav i {
     border: 1px solid #183161d1;
     cursor: pointer;
@@ -225,22 +286,6 @@ button:hover {
 .join-club .shear img:hover {
     opacity: 1;
     transition: all 0.4s ease-in-out;
-}
-
-.Our-Commitment .custom-nav i {
-    border: 1px solid white;
-    cursor: pointer;
-    margin-right: 10px;
-    padding: 7px;
-    border-radius: 50%;
-    color: white;
-    background-color: transparent;
-}
-
-.Our-Commitment .custom-nav i:hover {
-    background-color: white;
-    color: #183161d1 !important;
-    transition: all 0.5s ease-in-out;
 }
 
 .hide-div {

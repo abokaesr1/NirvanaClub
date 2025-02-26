@@ -1,14 +1,12 @@
 <?php
 
-namespace App\View\Components\Home;
+namespace App\View\Components\Header;
 
-use App\Models\Aboutus as ModelsAboutus;
-use App\Models\Ourcommitment;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Aboutus extends Component
+class Navbar extends Component
 {
     /**
      * Create a new component instance.
@@ -23,9 +21,6 @@ class Aboutus extends Component
      */
     public function render(): View|Closure|string
     {
-        $aboutus = ModelsAboutus::first();
-        $ourcommitment = Ourcommitment::first();
-
-        return view('components.home.aboutus', compact('aboutus', 'ourcommitment'));
+        return view('components.header.navbar');
     }
 }

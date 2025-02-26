@@ -2,9 +2,10 @@
     <div class="container">
         <h2 style="color: white;" class="text-uppercase mb-5">new & blogs</h2>
         <div class="row align-items-stretch">
-            <div class="col-lg-5 offset-lg-1 d-flex">
+            <div class="col-lg-6 d-flex">
                 <div class="imgleft w-100">
-                    <img src="imeges/Shakhbout1.jpg" alt="" class="img-fluid h-100">
+                    <img src="{{ asset('assets/images/blog.jpg') }}" style="object-fit: cover;border-radius:15px;"
+                        alt="" class="img-fluid h-100">
                 </div>
             </div>
             <div class="col-lg-6 d-flex">
@@ -36,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="custom-nav" style="color: red;">
+        <div class="custom-nav" style="color: red;margin-top:15px">
             <i class="fa-solid fa-arrow-left me-2" id="prev"></i>
             <i class="fa-solid fa-arrow-right" id="next"></i>
         </div>

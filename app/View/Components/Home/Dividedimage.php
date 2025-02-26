@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Home;
 
+use App\Models\Downloadapp;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,8 @@ class Dividedimage extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.home.dividedimage');
+        $dividedimage = Downloadapp::first();
+
+        return view('components.home.dividedimage', compact('dividedimage'));
     }
 }

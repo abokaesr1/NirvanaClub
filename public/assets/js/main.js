@@ -53,16 +53,66 @@
      });
 
      // Carousel 2 settings
-     $('#carusel2').owlCarousel({
-         loop: true,
-         margin: 10,
-         nav: false,
-         dots: true,
-         responsive: {
-             1000: { items: 1.3 }, // 2 items for large screens
-             0: { items: 1 }     // 1 item for smaller screens
-         }
-     });
+    // $('#carusel2').owlCarousel({
+    //     loop: true,
+    //     margin: 10,
+    //     nav: false,
+    //     dots: true,
+    //     responsive: {
+    //         1000: { items: 1.3 }, // 2 items for large screens
+    //         0: { items: 1 }     // 1 item for smaller screens
+    //     }
+    // });
+
+    function showProjectsbyCat( cat ){
+        if ( cat == 'all'){
+          $('#projects-hidden .project').each(function(){
+             var owl   = $(".owlcarousel .carusel2");
+             elem      = $(this).parent().html();
+             owl.owlCarousel('add', elem).owlCarousel('update');
+             $(this).parent().remove();
+          });
+        }
+        else{
+          $('#projects-hidden .project.'+ cat).each(function(){
+             var owl   = $(".owlcarousel  .carusel2");
+             elem      = $(this).parent().html();
+            owl.owlCarousel('add', elem).owlCarousel('update');
+             $(this).parent().remove();
+          });
+          $('#carusel2 .project:not(.project.'+ cat + ')').each(function(){
+             var owl   = $(".owlcarousel  .carusel2");
+             targetPos = $(this).parent().index();
+             elem      = $(this).parent();
+             $( elem ).clone().appendTo( $('#projects-hidden') );
+             owl.owlCarousel('remove', targetPos).owlCarousel('update');;
+          });
+        }
+      }
+
+    // Click event for filters
+    $("#project-terms a").click(function (e) {
+        e.preventDefault();
+        $("#project-terms a").removeClass("active");
+
+        var cat = $(this).attr("id");
+        $(this).addClass("active");
+        console.log(cat);
+        showProjectsbyCat(cat);
+    });
+
+    // Initialize Owl Carousel
+    $("#carusel2").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        responsive: {
+            1000: { items: 1.3 },
+            0: { items: 1 },
+        },
+    });
+
      const carousel = $("#carusel4").owlCarousel({
          loop: true,
          margin: 0,
@@ -70,7 +120,28 @@
          dots: false,
          items: 1
      });
+     $("#project-terms").owlCarousel({
+        items : 5, //10 items above 1000px browser width
+        nav: true,
+        navText: ["<", ">"], // Customize arrow icons
+        dots: false,
+        itemsDesktop : [1000,2], //5 items between 1000px and 901px
+        itemsDesktopSmall : [900,2], // betweem 900px and 601px
+        itemsTablet: [600,2], //2 items between 600 and 0;
+        itemsMobile : false,
 
+    });
+
+    $("#carusel-whyjoin").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        responsive: {
+            1000: { items: 3.5 },
+            0: { items: 1 },
+        },
+    });
      // Custom Navigation Buttons
      // Navigate on Div Click
      $("#prev").click(function () {
@@ -82,13 +153,5 @@
      $("#aaa").click(function () {
          carousel.trigger('next.owl.carousel');
      });
-     const map = L.map('map').setView([25.276987, 55.296249], 10);
-     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         maxZoom: 19,
-         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-     }).addTo(map);
 
-     L.marker([25.276987, 55.296249]).addTo(map)
-         .bindPopup('Hello This is your First Location')
-         .openPopup();
  });
